@@ -1,0 +1,51 @@
+{
+  "name": "Ultra Walking",
+  "version": "1.0",
+  "author": "Alessio Sclocco",
+  "description": "Walking/Running time",
+  "type": "feature",
+  "usage": "workout",
+  "modificationTime": 1679147763,
+  "in": [
+    {
+      "name": "duration",
+      "source": "Activity/Move/-1/Duration/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "distance",
+      "source": "Activity/Move/-1/Distance/Current",
+      "type": "subscribe"
+    },
+    {
+      "name": "cadence",
+      "source": "Activity/Move/-1/Cadence/Current",
+      "type": "subscribe"
+    }
+  ],
+  "out": [
+    {
+      "name": "duration_walk"
+    },
+    {
+      "name": "duration_stand"
+    },
+    {
+      "name": "duration_run"
+    },
+    {
+      "name": "distance_walk"
+    },
+    {
+      "name": "distance_stand"
+    },
+    {
+      "name": "distance_run"
+    }
+  ],
+  "template": [
+    {
+      "name": "t.html"
+    }
+  ]
+}

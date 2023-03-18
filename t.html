@@ -1,0 +1,43 @@
+<uiView>
+  <div id="suuntoplus">
+
+    <!-- logo/title and its bg -->
+    <div class="cm-fg" style="width:100%;height:25%">
+      <div class="sp-t-m p-hc" style="top:calc(60% - 50%e)">
+        Walk / Run
+      </div>
+    </div>
+
+    <!-- vertical separator -->
+    <div class="cm-fg p-hc" style="top:34%;width:2px;height:30%;opacity:0.4"></div>
+
+    <!-- top -->
+    <div>
+      <!-- left -->
+      <div class="sp-t-s" style="top:calc(42% - 100%e);left:calc(26% - 50%e)">
+        {zapp_tl_title}
+      </div>
+      <div class="sp-vc" style="top:40%;left:calc(26% - 50%e)">
+        <eval input="{zapp_tl_input}" outputFormat="{zapp_tl_format}" default="--" />
+      </div>
+
+      <!-- right -->
+      <div class="sp-t-s" style="top:calc(42% - 100%e);left:calc(74% - 50%e)">
+        {zapp_tr_title}
+      </div>
+      <div class="sp-vc" style="top:40%;left:calc(74% - 50%e)">
+        <eval input="{zapp_tr_input}" outputFormat="{zapp_tr_format}" default="--" />
+      </div>
+    </div>
+
+    <!-- bottom -->
+    <div class="sp-t-s p-hc" style="top:calc(70% - 50%e)">
+      {zapp_bottom_title}
+    </div>
+    <div class="sp-t-l f-num p-hc" style="top:calc(82% - 50%e)">
+      <eval input="{zapp_bottom_input}" outputFormat="{zapp_bottom_format}" default="--" />
+    </div>
+
+  </div>
+
+</uiView>
