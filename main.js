@@ -55,9 +55,12 @@ function onExerciseContinue() {
 function getUserInterface() {
   return {
     template: 't',
-    tl: { input: 'Output/duration_walk', format: 'Duration_Approximate', title: 'Walking' },
-    tr: { input: 'Output/duration_stand', format: 'Duration_Approximate', title: 'Stationary' },
-    bottom: { input: 'Output/duration_run', format: 'Duration_Approximate', title: 'Running' }
+    tl1: { input: 'Output/duration_walk', format: 'Duration_Accurate', title: 'Walking' },
+    tr1: { input: 'Output/duration_stand', format: 'Duration_Accurate', title: 'Stationary' },
+    bottom1: { input: 'Output/duration_run', format: 'Duration_Accurate', title: 'Running' },
+    tl2: { input: 'Output/distance_walk', format: 'Distance_Accurate', title: 'Walking' },
+    tr2: { input: 'Output/distance_stand', format: 'Distance_Accurate', title: 'Stationary' },
+    bottom2: { input: 'Output/distance_run', format: 'Distance_Accurate', title: 'Running' }
   };
 }
 
