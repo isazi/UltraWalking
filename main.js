@@ -12,16 +12,16 @@ function evaluate(input, output) {
   // First version, we use the current cadence to take decisions
   // without keeping a long term state
   if ( cadence < 10 ) {
-    output.duration_stand += input.duration - previousDuration;
-    output.distance_stand += input.distance - previousDistance;
+    output.duration_stand += (input.duration - previousDuration);
+    output.distance_stand += (input.distance - previousDistance);
   }
   else if ( cadence >= 10 && cadence < 70 ) {
-    output.duration_walk += input.duration - previousDuration;
-    output.distance_walk += input.distance - previousDistance;
+    output.duration_walk += (input.duration - previousDuration);
+    output.distance_walk += (input.distance - previousDistance);
   }
   else {
-    output.duration_run += input.duration - previousDuration;
-    output.distance_run += input.distance - previousDistance;
+    output.duration_run += (input.duration - previousDuration);
+    output.distance_run += (input.distance - previousDistance);
   }
   previousDuration = input.duration;
   previousDistance = input.distance;
