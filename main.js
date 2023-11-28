@@ -1,6 +1,8 @@
 var isPaused;
 var previousDuration;
 var previousDistance;
+var thresholdLow = 10;
+var thresholdHigh = 75;
 
 function evaluate(input, output) {
   if ( isPaused ) {
@@ -11,11 +13,11 @@ function evaluate(input, output) {
 
   // First version, we use the current cadence to take decisions
   // without keeping a long term state
-  if ( cadence < 10 ) {
+  if ( cadence < thresholdLow ) {
     output.duration_stand += (input.duration - previousDuration);
     output.distance_stand += (input.distance - previousDistance);
   }
-  else if ( cadence >= 10 && cadence < 70 ) {
+  else if ( cadence >= thresholdLow && cadence < thresholdHigh ) {
     output.duration_walk += (input.duration - previousDuration);
     output.distance_walk += (input.distance - previousDistance);
   }
@@ -67,37 +69,25 @@ function getUserInterface() {
 function getSummaryOutputs(input, output) {
   return [
     {
-      id: "myzapp01.time_walk",
-      name: "Walking",
+      id: "time_walk",
+      name: "Walking (time)",
       format: "Duration_Accurate",
       value: output.duration_walk
     },
     {
-      id: "myzapp01.time_stand",
-      name: "Stationary",
-      format: "Duration_Accurate",
-      value: output.duration_stand
-    },
-    {
-      id: "myzapp01.time_run",
-      name: "Running",
+      id: "time_run",
+      name: "Running (time)",
       format: "Duration_Accurate",
       value: output.duration_run
     },
     {
-      id: "myzapp01.distance_walk",
+      id: "distance_walk",
       name: "Walking",
       format: "Distance_Accurate",
       value: output.distance_walk
     },
     {
-      id: "myzapp01.distance_stand",
-      name: "Stationary",
-      format: "Distance_Accurate",
-      value: output.distance_stand
-    },
-    {
-      id: "myzapp01.distance_run",
+      id: "distance_run",
       name: "Running",
       format: "Distance_Accurate",
       value: output.distance_run
