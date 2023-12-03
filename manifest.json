@@ -41,6 +41,9 @@
     },
     {
       "name": "distance_run"
+    },
+    {
+      "name": "stand_counter"
     }
   ],
   "template": [
