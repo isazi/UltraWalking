@@ -1,6 +1,6 @@
 {
   "name": "Ultra Walking",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Alessio Sclocco",
   "description": "Walking/Running time",
   "type": "feature",
@@ -49,6 +49,14 @@
   "template": [
     {
       "name": "t.html"
+    }
+  ],
+  "settings": [
+    {
+      "shownName": "Logging as output",
+      "path": "OutputMode",
+      "type": "enum",
+      "values": ["Time", "Distance"]
     }
   ]
 }

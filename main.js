@@ -84,36 +84,61 @@ function getUserInterface() {
 }
 
 function getSummaryOutputs(input, output) {
-  return [
-    {
-      id: "stand_counter",
-      name: "Breaks",
-      format: "Count_Threedigits",
-      value: output.stand_counter
-    },
-    {
-      id: "time_walk",
-      name: "Walk (time)",
-      format: "Duration_Accurate",
-      value: output.duration_walk
-    },
-    {
-      id: "time_run",
-      name: "Run (time)",
-      format: "Duration_Accurate",
-      value: output.duration_run
-    },
-    {
-      id: "distance_walk",
-      name: "Walk",
-      format: "Distance_Accurate",
-      value: output.distance_walk
-    },
-    {
-      id: "distance_run",
-      name: "Run",
-      format: "Distance_Accurate",
-      value: output.distance_run
-    }
-  ];
+  var mode = Number(storage.getItem("OutputMode"));
+  if (mode == 0) {
+    return [
+      {
+        id: "stand_counter",
+        name: "Breaks",
+        format: "Count_Threedigits",
+        value: output.stand_counter
+      },
+      {
+        id: "time_walk",
+        name: "Walk",
+        format: "Duration_Accurate",
+        value: output.duration_walk
+      },
+      {
+        id: "time_run",
+        name: "Run",
+        format: "Duration_Accurate",
+        value: output.duration_run
+      },
+      {
+        id: "time_stand",
+        name: "Stationary",
+        format: "Duration_Accurate",
+        value: output.duration_stand
+      }
+    ];
+  }
+  else {
+    return [
+      {
+        id: "stand_counter",
+        name: "Breaks",
+        format: "Count_Threedigits",
+        value: output.stand_counter
+      },
+      {
+        id: "distance_walk",
+        name: "Walk",
+        format: "Distance_Accurate",
+        value: output.distance_walk
+      },
+      {
+        id: "distance_run",
+        name: "Run",
+        format: "Distance_Accurate",
+        value: output.distance_run
+      },
+      {
+        id: "distance_stand",
+        name: "Stationary",
+        format: "Distance_Accurate",
+        value: output.distance_stand
+      }
+    ];
+  }
 }
