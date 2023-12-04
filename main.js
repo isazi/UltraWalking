@@ -84,29 +84,29 @@ function getUserInterface() {
 }
 
 function getSummaryOutputs(input, output) {
-  var mode = Number(storage.getItem("OutputMode"));
+  var mode = Number(localStorage.getItem("OutputMode"));
   if (mode == 0) {
     return [
       {
-        id: "stand_counter",
-        name: "Breaks",
+        id: "0",
+        name: "Stops",
         format: "Count_Threedigits",
         value: output.stand_counter
       },
       {
-        id: "time_walk",
+        id: "1",
         name: "Walk",
         format: "Duration_Accurate",
         value: output.duration_walk
       },
       {
-        id: "time_run",
+        id: "2",
         name: "Run",
         format: "Duration_Accurate",
         value: output.duration_run
       },
       {
-        id: "time_stand",
+        id: "3",
         name: "Stationary",
         format: "Duration_Accurate",
         value: output.duration_stand
@@ -116,25 +116,25 @@ function getSummaryOutputs(input, output) {
   else {
     return [
       {
-        id: "stand_counter",
-        name: "Breaks",
+        id: "0",
+        name: "Stops",
         format: "Count_Threedigits",
         value: output.stand_counter
       },
       {
-        id: "distance_walk",
+        id: "1",
         name: "Walk",
         format: "Distance_Accurate",
         value: output.distance_walk
       },
       {
-        id: "distance_run",
+        id: "2",
         name: "Run",
         format: "Distance_Accurate",
         value: output.distance_run
       },
       {
-        id: "distance_stand",
+        id: "3",
         name: "Stationary",
         format: "Distance_Accurate",
         value: output.distance_stand
