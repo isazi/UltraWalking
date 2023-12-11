@@ -1,3 +1,4 @@
+var coldStart;
 var isPaused;
 var isStanding;
 var previousDuration;
@@ -12,6 +13,14 @@ function evaluate(input, output) {
   
   var cadence = Math.round(input.cadence * 60.0);
 
+  // This check is present to avoid counting a standing start as a stop
+  if ( coldStart && cadence == 0 ) {
+    return;
+  }
+  else {
+    coldStart = false;
+  }
+  
   // First version, we use the current cadence to take decisions
   // without keeping a long term state
   if ( cadence < thresholdLow ) {
@@ -45,6 +54,7 @@ function evaluate(input, output) {
 }
 
 function onLoad(input, output) {
+  coldStart = true;
   isPaused = true;
   isStanding = false;
   previousDuration = 0;
