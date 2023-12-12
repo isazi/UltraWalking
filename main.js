@@ -14,7 +14,7 @@ function evaluate(input, output) {
   var cadence = Math.round(input.cadence * 60.0);
 
   // This check is present to avoid counting a standing start as a stop
-  if ( coldStart && cadence == 0 ) {
+  if ( coldStart && cadence < thresholdLow ) {
     return;
   }
   else {
