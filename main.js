@@ -1,8 +1,8 @@
-var coldStart;
-var isPaused;
-var isStanding;
-var previousDuration;
-var previousDistance;
+var coldStart = true;
+var isPaused = true;
+var isStanding = false;
+var previousDuration = 0;
+var previousDistance = 0;
 var thresholdLow = 10;
 var thresholdHigh = 75;
 
@@ -54,12 +54,6 @@ function evaluate(input, output) {
 }
 
 function onLoad(input, output) {
-  coldStart = true;
-  isPaused = true;
-  isStanding = false;
-  previousDuration = 0;
-  previousDistance = 0;
-
   output.stand_counter = 0;
   output.duration_stand = 0;
   output.distance_stand = 0;
