@@ -17,7 +17,9 @@ function evaluate(input, output) {
   if ( coldStart && cadence < thresholdLow ) {
     return;
   }
-  else {
+  else if ( coldStart ) {
+    previousDuration = input.duration;
+    previousDistance = input.distance;
     coldStart = false;
   }
   
@@ -71,8 +73,11 @@ function onExercisePause() {
   isPaused = true;
 }
 
-function onExerciseContinue() {
+function onExerciseContinue(input, output) {
   isPaused = false;
+  previousDuration = input.duration;
+  previousDistance = input.distance;
+  output.stand_counter++;
 }
 
 function getUserInterface() {
